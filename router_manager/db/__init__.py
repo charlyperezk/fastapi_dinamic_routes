@@ -1,0 +1,1 @@
+from router_manager.db.crud import GenericCRUD as CRUDController
