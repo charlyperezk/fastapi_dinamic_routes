@@ -29,10 +29,13 @@ class DiagramScheme:
             }
 
 class Create(DiagramScheme):
-    _visibility = {FieldVisibility.DELETE}
+    _visibility = {FieldVisibility.CREATE}
     
 class Read(DiagramScheme):
     _visibility = {FieldVisibility.READ}
 
 class Update(DiagramScheme):
     _visibility = {FieldVisibility.UPDATE}
+
+class Admin(DiagramScheme):
+    _visibility = {FieldVisibility.ADMIN}

@@ -1,2 +1,2 @@
 import examples.database as db
-from examples import user
+from examples import *

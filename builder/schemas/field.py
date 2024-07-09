@@ -4,9 +4,11 @@ from builder.box.config.attributes import Attribute
 
 @dataclass
 class FieldVisibility:
+    CREATE = "create"
     READ = "read"
     UPDATE = "update"
     DELETE = "delete"
+    ADMIN = "admin"
     ALL = "*"
 
 class Field:

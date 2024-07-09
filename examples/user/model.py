@@ -3,7 +3,6 @@ from sqlalchemy import Column, String, Boolean, UUID, Integer
 import uuid
 
 
-### DBMODEL
 class User(Base):
     __tablename__ = "user"
     id = Column(UUID, primary_key=True, default=uuid.uuid4, unique=True, nullable=False)

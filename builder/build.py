@@ -1,7 +1,6 @@
 from builder.schemas import BuilderScheme, DiagramScheme, ConstructorReturn
 from builder.diagrammer import Diagrammer
 from builder.constructor import Constructor
-from pydantic import BaseModel
 
 
 class Builder:
