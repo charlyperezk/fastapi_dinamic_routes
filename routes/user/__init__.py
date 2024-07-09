@@ -1,16 +1,16 @@
 from router_manager import utils, db, Entity
 import router_manager.controller.route_manager as control
-from examples.payment_method.model import PaymentMethod
-from examples.payment_method.schemas import classes
+from routes.user.model import User
+from routes.user.schemas import classes
 
 
-__name__ = "payment_method"
+__name__ = "user"
 
 try:
-    from examples.database import get_session
+    from routes.database import get_session
 
     entity = Entity(
-        db_model=PaymentMethod,
+        db_model=User,
         **classes.get_data()
     )
 

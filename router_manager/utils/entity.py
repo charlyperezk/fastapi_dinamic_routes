@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from sqlalchemy.orm.decl_api import DeclarativeMeta
+from typing import Any, Dict
 
 
 class Entity:
@@ -37,8 +38,9 @@ class Entity:
                 dict_value = value.dict()
                 transformed_dict = {k: v.dict() if isinstance(v.__class__, DeclarativeMeta) else v for k, v in dict_value.items()}
                 return self.read(**transformed_dict)
-            if isinstance(value, list):
+            elif isinstance(value, list):
                 return [self.read(**obj.dict()) for obj in value]
             
     def object_to_dict(self, obj: BaseModel):
         return obj.dict()
+        

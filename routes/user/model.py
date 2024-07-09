@@ -1,4 +1,4 @@
-from examples.database import Base
+from routes.database import Base
 from sqlalchemy import Column, String, Boolean, UUID, Integer
 import uuid
 

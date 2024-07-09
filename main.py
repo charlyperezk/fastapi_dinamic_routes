@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from examples import db, user, movement_type, movement_category, payment_method, movement
+from routes import db, user, movement_type, movement_category, payment_method, movement, account
 
 
 app = FastAPI()
@@ -23,8 +23,12 @@ app.include_router(
     movement.route_manager.crud_route,
     tags=[movement.__name__]
     )
+app.include_router(
+    account.route_manager.crud_route,
+    tags=[account.__name__]
+    )
 
-from examples.start_config import first_config
 
+# from routes.start_config import first_config
 app.on_event("startup")(db.create_db)
 # app.on_event("startup")(first_config)

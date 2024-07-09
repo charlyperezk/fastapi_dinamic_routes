@@ -1,16 +1,16 @@
 from router_manager import utils, db, Entity
 import router_manager.controller.route_manager as control
-from examples.movement.model import Movement
-from examples.movement.schemas import classes
+from routes.movement_type.model import MovementType
+from routes.movement_type.schemas import classes
 
 
-__name__ = "movement"
+__name__ = "movement_type"
 
 try:
-    from examples.database import get_session
+    from routes.database import get_session
 
     entity = Entity(
-        db_model=Movement,
+        db_model=MovementType,
         **classes.get_data()
     )
 

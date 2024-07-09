@@ -10,8 +10,10 @@ def format_data(data: dict[str, Any]) -> dict[str, Any]:
         elif isinstance(v, datetime):
             attributes[k] = v.isoformat()
         elif isinstance(v, dict):
-            print(v.items())
             attributes[k] = format_data(v)
+        elif isinstance(v, list):
+            attributes[k] = list(map(lambda x: format_data(x), v))
         else:
             attributes[k] = v
+
     return attributes
